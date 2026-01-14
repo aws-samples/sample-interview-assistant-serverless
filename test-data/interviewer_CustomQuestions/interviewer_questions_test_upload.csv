@@ -1,0 +1,56 @@
+question,category,difficulty,instructions,evaluation,answer,time
+Tell me about yourself,Behavioral,easy,"Ask the candidate to share their professional journey and what brings them to this interview. Listen for clear communication, relevant experience, and enthusiasm.","Clear and concise summary of background
+- Highlights relevant experience
+- Shows enthusiasm and motivation
+- Good communication skills",,5 minutes
+Explain how you would design a scalable caching strategy for a high-traffic web application,Technical Skills,hard,"Assess the candidate's understanding of caching patterns, distributed systems, and performance optimization. Look for:
+- Knowledge of different caching layers (browser, CDN, application, database)
+- Understanding of cache invalidation strategies
+- Awareness of trade-offs between consistency and performance
+- Experience with caching technologies (Redis, Memcached, CDN services)","Evaluate the candidate on:
+- Clearly explains the technical problem
+- Describes solution approach and reasoning
+- Discusses trade-offs and alternatives
+- Shows learning and growth from experience","Strong answers typically include:
+- Multi-tier caching strategy (CDN for static assets, Redis for session data, application cache for computed results)
+- Cache-aside or write-through patterns depending on use case
+- Invalidation strategies like TTL, event-driven invalidation, or cache tags
+- Handling of cache misses and thundering herd problem
+- Specific technologies and their trade-offs",15 minutes
+Write a function to find the first non-repeating character in a string,Technical Skills,medium,"Evaluate the candidate's coding skills, algorithmic thinking, and ability to optimize solutions. Pay attention to:
+- Choice of data structures (hash map, array)
+- Time and space complexity analysis
+- Edge case handling (empty string, all repeating characters)
+- Code clarity and style
+- Ability to explain their approach before coding","Evaluate the candidate on:
+- Provides a working solution
+- Analyzes time complexity (should achieve O(n))
+- Analyzes space complexity
+- Handles edge cases appropriately
+- Writes clean, readable code
+- Considers alternative approaches
+- Tests the solution with examples","Strong answers typically include:
+- Two-pass solution using a hash map to count character frequencies
+- Single-pass optimization if needed
+- Time complexity: O(n), Space complexity: O(k) where k is character set size
+- Edge case handling: return null/-1 for empty string or no non-repeating character
+- Example: ""leetcode"" _ ""l"", ""aabbcc"" _ null",15 minutes
+Explain the difference between SQL and NoSQL databases and when you would choose each,Technical Skills,easy,"Assess the candidate's understanding of database systems, trade-offs, and decision-making. Look for:
+- Clear explanation of fundamental differences
+- Understanding of ACID vs BASE properties
+- Knowledge of specific database types and use cases
+- Real-world experience with database selection decisions
+- Awareness of modern hybrid approaches","Evaluate the candidate on:
+- Explains key differences (schema, consistency, scalability)
+- Discusses ACID properties and their importance
+- Provides specific examples of each database type
+- Describes appropriate use cases for SQL
+- Describes appropriate use cases for NoSQL
+- Mentions trade-offs and considerations
+- Discusses performance and scaling characteristics","Strong answers typically include:
+- SQL: structured schema, ACID transactions, complex queries, relational data (PostgreSQL, MySQL)
+- NoSQL: flexible schema, eventual consistency, horizontal scaling, various types (document, key-value, column, graph)
+- Use SQL for: financial transactions, complex relationships, strong consistency requirements
+- Use NoSQL for: high-volume data, flexible schemas, horizontal scaling needs, specific access patterns
+- Trade-offs: consistency vs availability (CAP theorem), query flexibility vs performance
+- Modern approaches: NewSQL, multi-model databases",10 minutes

@@ -1,0 +1,18 @@
+{
+  "metadataAttributes": {
+    "category": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Technical Skills"
+      },
+      "includeForEmbedding": true
+    },
+    "difficulty": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "hard"
+      },
+      "includeForEmbedding": true
+    }
+  }
+}

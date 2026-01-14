@@ -1,0 +1,128 @@
+docs/kit/*
+docs/kit
+sync-public.sh
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.pnpm-debug.log*
+.ruff_cache
+
+
+# Build outputs
+*.js
+*.d.ts
+!jest.config.js
+!playwright.config.js
+# ESLint config is now .mjs (pure ESM), don't track compiled versions
+eslint.config.js
+eslint.config.d.ts
+*.js.map
+dist/
+build/
+lib/**/*.js
+lib/**/*.d.ts
+
+# CDK
+cdk.out/
+cdk.context.json
+.cdk.staging/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+dist/
+.eggs/
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+.virtual_documents/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Environment variables
+.env
+.env.test
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+
+# AWS
+.aws-sam/
+samconfig.toml
+
+# Testing
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# OS
+.DS_Store
+**/.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.temp/
+tmp/
+
+# Git worktrees directory (per CLAUDE.md workflow)
+worktrees/
+
+# Frontend files
+!lib/stacks/frontend/src/*.js
+!lib/stacks/frontend/src/config/*.js
+!lib/stacks/frontend/src/services/*.js
+!lib/stacks/frontend/src/utils/*.js

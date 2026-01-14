@@ -1,0 +1,106 @@
+{
+  "name": "sonic-int",
+  "description": "Interview Assistant",
+  "version": "1.0.0",
+  "author": "Felix Huthmacher",
+  "license": "Apache License Version 2.0",
+  "private": true,
+  "bin": {
+    "app": "bin/app.js"
+  },
+  "scripts": {
+    "preinstall": "npm config set registry=https://registry.npmjs.com/",
+    "postinstall": "uv tool install ruff",
+    "prepare": "husky",
+    "format": "prettier --write . && ruff format .",
+    "lint": "eslint . && ruff check .",
+    "kit": "npx tsx tools/cli.ts",
+    "export": "npx tsx tools/export.ts",
+    "stage": "npx generate-changelog && git add -A",
+    "commit": "npx cz",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:chromium": "playwright test --project=chromium",
+    "test:e2e:mobile": "playwright test --project=Mobile*",
+    "test:e2e:report": "playwright show-report",
+    "cdk": "npx aws-cdk@2.1023.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix-dry-run"
+    ],
+    "*.{json,yaml,yml,md,html,css}": [
+      "prettier --write"
+    ],
+    "*.py": [
+      "ruff format",
+      "ruff check"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": "22.8.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-cloudformation": "^3.857.0",
+    "@aws-sdk/client-cognito-identity-provider": "^3.857.0",
+    "@aws-sdk/client-secrets-manager": "^3.857.0",
+    "@aws-sdk/credential-providers": "^3.857.0",
+    "@inquirer/prompts": "^7.8.0",
+    "@playwright/test": "^1.56.1",
+    "@types/archiver": "^6.0.3",
+    "@types/aws-lambda": "^8.10.152",
+    "@types/jest": "^29.5.14",
+    "@types/node": "22.7.9",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "archiver": "^7.0.1",
+    "aws-cdk": "^2.1023.0",
+    "aws-cdk-lib": "^2.233.0",
+    "chalk": "4.1.0",
+    "commander": "^14.0.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "globals": "^15.15.0",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.37.0",
+    "yaml": "^2.8.0"
+  },
+  "dependencies": {
+    "@aws-amplify/data-construct": "^1.16.3",
+    "@aws-cdk/aws-bedrock-agentcore-alpha": "^2.233.0-alpha.0",
+    "@aws-cdk/aws-lambda-python-alpha": "^2.214.1-alpha.0",
+    "@aws-cdk/lambda-layer-kubectl-v33": "2.0.0",
+    "@aws-sdk/client-codebuild": "^3.857.0",
+    "@aws/pdk": "^0.26.14",
+    "@cdklabs/generative-ai-cdk-constructs": "^0.1.309",
+    "aws-appsync": "^4.1.10",
+    "cdk-nag": "^2.37.45",
+    "cdk-s3-vectors": "^0.3.2",
+    "constructs": "^10.4.4",
+    "dotenv": "^16.4.5"
+  },
+  "volta": {
+    "node": "22.8.0"
+  }
+}

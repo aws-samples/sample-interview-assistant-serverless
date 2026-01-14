@@ -1,0 +1,58 @@
+# Web framework and API dependencies
+fastapi>=0.68.0  # Used in: main.py, candidate_api.py, interviewer_api.py, analytics_api.py - REST API framework
+starlette>=0.14.2  # Used in: candidate_api.py, analytics_api.py - Web framework (FastAPI dependency)
+mangum>=0.17.0  # NEW: ASGI adapter for AWS Lambda - wraps FastAPI for Lambda compatibility
+
+# AWS dependencies
+boto3==1.41.2  # Used in: auth.py, candidate_api.py, s2s_session_manager.py, run_servers.py, services/database_service.py, services/knowledgebase_service.py, tools/web_search.py - AWS SDK
+
+# OpenTelemetry dependencies (optional - Lambda provides native X-Ray tracing)
+# aws-opentelemetry-distro==0.12.2  # Used in: opentelemetry_span_manager.py - Distributed tracing
+# NOTE: OpenTelemetry removed for Lambda - use AWS X-Ray instead via Lambda integration
+
+# Data validation and serialization
+pydantic>=1.8.0  # Used in: candidate_api.py, interviewer_api.py, interview_planner_models.py, interview_analysis_models.py, live_practice_models.py, live_practice_service.py, tools/tools_list.py - Data validation
+
+# Environment and configuration
+python-dotenv>=0.19.0  # Used in: candidate_api.py, interviewer_api.py, analytics_api.py, run_servers.py, services/database_service.py - Environment variable management
+
+# Utility packages
+# python-dateutil>=2.8.2  # Standard Python date utilities (indirect dependency)
+requests>=2.28.0  # Used in: candidate_api.py, auth.py, run_servers.py - HTTP requests
+
+# Logging and monitoring
+# structlog>=21.1.0  # Structured logging (appears to be unused, consider removing)
+
+# HTTP middleware
+aiohttp>=3.8.0  # Async HTTP client (required by smithy-http for AIOHTTPClient)
+
+# Authentication and security
+PyJWT>=2.8.0  # Used in: auth.py, run_servers.py - JWT token validation
+cryptography>=41.0.0  # Used in: auth.py, run_servers.py - Cryptographic functions for JWT
+
+# File upload support
+python-multipart  # Used for file upload support in FastAPI
+
+# NOTE: WebSocket dependencies removed - handled by AgentCore Runtime in Phase 3
+# The following are NOT needed for Lambda REST API:
+# - aws_sdk_bedrock_runtime (S2S streaming - moved to AgentCore)
+# - smithy_aws_core, smithy_http, aws_sdk_signers (Smithy dependencies)
+# - numpy (audio processing - moved to AgentCore)
+# - awscrt (AWS Common Runtime - moved to AgentCore)
+# - amazon-transcribe (real-time transcription - moved to AgentCore)
+# - websockets (WebSocket support - replaced by AgentCore Runtime)
+
+# HTML parsing and web scraping
+beautifulsoup4>=4.12.0  # Used in: candidate_api.py - HTML parsing for web content
+# PDF processing library
+PyPDF2>=3.0.0  # Used in: candidate_api.py - PDF parsing for CV uploads
+# For monitoring system resources
+# psutil>=5.9.0  # System resource monitoring (may be unused, consider removing)
+
+# AI Agent framework and tools
+strands-agents>=1.6.0  # Used in: candidate_planner_service.py, interview_planner_service.py, interviewer_planner_service.py, interview_analysis_service.py, interviewer_session_service.py, live_practice_service.py, tools/web_search.py - AI agent orchestration
+strands-agents-tools  # Used in: interviewer_planner_service.py - Pre-built tools like calculator for AI agents
+ddgs  # Used in: tools/web_search.py - DuckDuckGo search tool for AI agents
+
+# Amazon Bedrock AgentCore Memory
+bedrock-agentcore>=1.0.0  # Used in: candidate_api.py - AgentCore Memory client for storing conversation history and user preferences

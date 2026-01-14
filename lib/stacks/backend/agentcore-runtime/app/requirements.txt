@@ -1,0 +1,42 @@
+# Web Framework
+fastapi==0.127.0  # FastAPI web framework for WebSocket server
+uvicorn[standard]==0.40.0  # ASGI server for FastAPI
+
+# Amazon Bedrock and Strands Framework
+strands-agents>=1.6.0  # AI agent framework for tool orchestration
+
+# AWS SDK
+boto3>=1.41.2  # AWS SDK for DynamoDB, S3, Bedrock
+
+# WebSocket dependencies for S2S streaming
+websockets==15.0.1  # WebSocket connection handling for live assistant
+
+# Nova Sonic S2S Bidirectional Streaming
+aws_sdk_bedrock_runtime==0.2.0  # Bedrock Nova Sonic streaming client
+smithy_aws_core>=0.1.0  # AWS Smithy core for Bedrock Runtime
+smithy_http  # HTTP client for Smithy (will pull 0.3.0 from bedrock-runtime)
+aws_sdk_signers>=0.0.1  # AWS request signing for Smithy
+numpy>=1.24.0  # Audio data processing
+
+# OpenTelemetry for observability (required by AgentCore)
+aws-opentelemetry-distro==0.10.1  # Distributed tracing (specific version required by AgentCore)
+
+# Data validation and serialization
+pydantic>=1.8.0  # Data validation for models
+
+# Authentication and security
+PyJWT>=2.8.0  # JWT token validation
+cryptography>=41.0.0  # Cryptographic functions for JWT
+
+# HTTP client
+aiohttp>=3.8.0  # Async HTTP client (required by smithy-http)
+requests>=2.28.0  # HTTP requests for auth validation
+
+# Environment configuration
+python-dotenv>=0.19.0  # Environment variable management
+
+# Web search tool for AI agents
+ddgs  # DuckDuckGo search tool (used by web_search.py if needed)
+
+# Amazon Transcribe (installed separately in Dockerfile with --no-deps to keep awscrt 0.28.2)
+# amazon-transcribe==0.6.4  # Real-time transcription
