@@ -564,8 +564,8 @@ This solution must be deployed in a region in which Amazon Nova Sonic is availab
 ### 1. Clone the repository:
 
 ```bash
-git clone git@ssh.gitlab.aws.dev:applied-ai-and-data-architects/interview-assistant-serverless.git
-cd interview-assistant
+git clone https://github.com/aws-samples/sample-interview-assistant-serverless.git
+cd sample-interview-assistant-serverless
 ```
 
 ### 2. Choose authentication method:
